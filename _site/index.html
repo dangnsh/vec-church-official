@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hội Thánh Tin Lành Việt Nam tại Singapore</title>
+  <meta name="description" content="Hội Thánh Tin Lành Việt Nam tại Singapore — giờ nhóm, sinh hoạt trong tuần và bài giảng Chúa Nhật dành cho tín hữu người Việt tại Singapore." />
+  <meta property="og:title" content="Hội Thánh Tin Lành Việt Nam tại Singapore" />
+  <meta property="og:description" content="Giờ nhóm, sinh hoạt trong tuần và bài giảng Chúa Nhật." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vec.church" />
+  <meta name="theme-color" content="#0F2D5C" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+</head>
+<body>
+
+<header class="masthead" id="masthead">
+  <div class="wrap masthead-row">
+    <a class="wordmark" href="#top">
+      <svg class="mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect x="14" y="3" width="4" height="26" rx="1"/><rect x="6" y="10" width="20" height="4" rx="1"/></svg>
+      <span>Hội Thánh Tin Lành Việt Nam <em>tại Singapore</em></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Mục chính">
+      <a href="#gio-nhom">Giờ nhóm</a>
+      <a href="#tuan-nay">Tuần này</a>
+      <a href="#bai-giang">Bài giảng</a>
+      <a href="#hoc-kinh-thanh">Học Kinh Thánh</a>
+      <a href="#ban-nganh">Ban ngành</a>
+      <a href="#ve-hoi-thanh">Về Hội Thánh</a>
+      <a href="#lien-he">Liên hệ</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-controls="menu" aria-expanded="false">Mục lục</button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero: the one bold moment on the page -->
+  <section class="hero" id="hero">
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="hero-when" id="heroWhen">Chúa Nhật này</p>
+        <h1 class="hero-title">
+          <span>Mời bạn đến</span>
+          <span>thờ phượng Chúa</span>
+          <span>cùng gia đình</span>
+          <span>người Việt tại Singapore.</span>
+        </h1>
+        <p class="hero-lead">Chúng tôi nhóm lại mỗi Chúa Nhật để ca ngợi Chúa, nghe Lời Ngài bằng tiếng Việt và nâng đỡ nhau trong đời sống xa quê. Dù bạn mới đến Singapore hay đã ở lâu, chỗ ngồi luôn sẵn dành cho bạn.</p>
+        <div class="hero-actions">
+          <a class="button" href="#gio-nhom">Xem giờ nhóm và đường đi</a>
+          <a class="link-arrow" href="#bai-giang" id="heroSermonLink">Nghe bài giảng tuần trước</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verse of the day -->
+  <section class="verse-row">
+    <div class="wrap verse">
+      <p id="verseText">“Hãy đến cùng Ta, hết thảy những kẻ mệt mỏi và gánh nặng, Ta sẽ cho các ngươi được yên nghỉ.”</p>
+      <p class="verse-ref" id="verseRef">Ma-thi-ơ 11:28</p>
+    </div>
+  </section>
+
+  <!-- Service times -->
+  <section class="block" id="gio-nhom">
+    <div class="wrap">
+      <header class="block-head">
+        <h2>Giờ nhóm</h2>
+        <p>Các buổi nhóm cố định trong tuần. Giờ theo múi giờ Singapore.</p>
+      </header>
+
+      <div class="two-col">
+        <ol class="timetable" id="timetable"><!-- from data.js --></ol>
+
+        <aside class="place">
+          <h3 id="locName">Queenstown Baptist Church</h3>
+          <p class="place-addr" id="locAddr">495 Margaret Drive, Singapore 149305</p>
+          <p class="place-note" id="locNote"></p>
+          <div class="place-map"><iframe id="locMapFrame" title="Bản đồ đến nơi nhóm" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src=""></iframe></div>
+          <p class="place-actions">
+            <a class="button button-small" id="locMapLink" target="_blank" rel="noopener" href="#">Mở chỉ đường</a>
+            <a class="link-arrow" id="locCalLink" href="#" download="tho-phuong-chua-nhat.ics">Thêm vào lịch của bạn</a>
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- This week -->
+  <section class="block block-tint" id="tuan-nay">
+    <div class="wrap">
+      <header class="block-head">
+        <h2>Tuần này</h2>
+        <p>Thông báo từ Ban Chấp Sự và những ngày sắp tới cần ghi nhớ.</p>
+      </header>
+      <div class="two-col two-col-wide">
+        <div>
+          <h3 class="sub">Thông báo</h3>
+          <ul class="bulletin" id="announceList"></ul>
+        </div>
+        <div>
+          <h3 class="sub">Sắp tới</h3>
+          <ul class="agenda" id="eventList"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sermons -->
+  <section class="block" id="bai-giang">
+    <div class="wrap">
+      <header class="block-head">
+        <h2>Bài giảng</h2>
+        <p>Nghe lại sứ điệp Chúa Nhật trên trang này hoặc tải về nghe khi đi làm, đi học.</p>
+      </header>
+
+      <article class="latest" id="latest"><!-- from data.js --></article>
+
+      <div class="archive-head">
+        <h3 class="sub">Các bài trước</h3>
+        <div class="archive-tools">
+          <label class="field"><span class="sr-only">Tìm bài giảng</span><input type="search" id="sermonSearch" placeholder="Tìm tựa đề, diễn giả, đoạn Kinh Thánh" /></label>
+          <label class="field"><span class="sr-only">Loạt bài</span><select id="seriesSelect"><option value="">Tất cả loạt bài</option></select></label>
+        </div>
+      </div>
+      <ol class="archive" id="sermonList"></ol>
+      <p class="empty" id="sermonEmpty" hidden>Không có bài nào khớp. Thử từ khoá khác hoặc chọn “Tất cả loạt bài”.</p>
+    </div>
+  </section>
+
+  <!-- Bible study -->
+  <section class="block block-tint" id="hoc-kinh-thanh">
+    <div class="wrap">
+      <header class="block-head">
+        <h2>Học Kinh Thánh</h2>
+        <p>Bài học giữa tuần để đọc trước ở nhà, xem lại nếu vắng mặt, hoặc dùng cho nhóm nhỏ.</p>
+      </header>
+      <ol class="studies" id="studyList"></ol>
+      <p class="empty" id="studyEmpty" hidden>Chưa có bài học nào được đăng.</p>
+    </div>
+  </section>
+
+  <!-- Ministries -->
+  <section class="block" id="ban-nganh">
+    <div class="wrap">
+      <header class="block-head">
+        <h2>Ban ngành</h2>
+        <p>Nơi mỗi người góp phần phục vụ. Nếu muốn tham gia, hãy nói với bất kỳ ai trong Ban Chấp Sự sau giờ nhóm.</p>
+      </header>
+      <dl class="ministries" id="ministryList"></dl>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="block block-tint" id="ve-hoi-thanh">
+    <div class="wrap about">
+      <header class="block-head">
+        <h2>Về Hội Thánh</h2>
+      </header>
+      <div class="prose">
+        <p>Hội Thánh Tin Lành Việt Nam tại Singapore bắt đầu nhóm lại từ năm <span id="foundedYear">2009</span>, khi một nhóm nhỏ tín hữu người Việt đang học tập và làm việc tại đây tìm đến nhau để cùng thờ phượng bằng tiếng mẹ đẻ. Đến nay Hội Thánh là mái nhà chung của sinh viên, người lao động, các gia đình trẻ và những người Việt định cư lâu năm ở Singapore.</p>
+        <p>Chúng tôi tin Kinh Thánh là Lời Đức Chúa Trời, tin Chúa Giê-xu Christ là Cứu Chúa duy nhất, và sống để làm vinh hiển danh Ngài qua bốn việc giản dị: thờ phượng, thông công, học Lời Chúa và chia sẻ Tin Lành cho đồng hương.</p>
+        <p>Hội Thánh nhóm tại cơ sở của Queenstown Baptist Church và sinh hoạt trong mối thông công với các Hội Thánh Tin Lành Việt Nam hải ngoại.</p>
+      </div>
+      <figure class="about-figure">
+        <blockquote>“Vì nơi nào có hai ba người nhân danh Ta nhóm nhau lại, thì Ta ở giữa họ.”</blockquote>
+        <figcaption>Ma-thi-ơ 18:20</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="block" id="lien-he">
+    <div class="wrap">
+      <header class="block-head">
+        <h2>Liên hệ</h2>
+        <p>Cần cầu thay, muốn được thăm viếng, hay chỉ muốn hỏi đường đến nhà thờ — cứ nhắn cho chúng tôi.</p>
+      </header>
+      <div class="two-col">
+        <dl class="contact" id="contactList"></dl>
+        <form class="form" id="contactForm" novalidate>
+          <div class="form-row">
+            <label class="field"><span>Họ tên</span><input name="name" required autocomplete="name" /></label>
+            <label class="field"><span>Email hoặc số điện thoại</span><input name="contact" required autocomplete="email" /></label>
+          </div>
+          <label class="field"><span>Bạn cần gì?</span>
+            <select name="topic">
+              <option>Xin cầu thay</option>
+              <option>Muốn đến nhóm lần đầu</option>
+              <option>Tìm hiểu về Chúa</option>
+              <option>Cần thăm viếng hoặc giúp đỡ</option>
+              <option>Việc khác</option>
+            </select>
+          </label>
+          <label class="field"><span>Lời nhắn</span><textarea name="message" rows="5"></textarea></label>
+          <div class="form-foot">
+            <button class="button" type="submit">Gửi lời nhắn</button>
+            <small>Ứng dụng email của bạn sẽ mở ra với nội dung đã điền sẵn.</small>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-name">Hội Thánh Tin Lành Việt Nam tại Singapore</p>
+      <p class="foot-sub">Vietnamese Evangelical Church (Singapore), nhóm lại từ <span id="foundedYear2">2009</span></p>
+      <p class="foot-sub" id="footerAddr"></p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="#gio-nhom">Giờ nhóm</a></li>
+      <li><a href="#tuan-nay">Tuần này</a></li>
+      <li><a href="#bai-giang">Bài giảng</a></li>
+      <li><a href="#lien-he">Liên hệ</a></li>
+    </ul>
+    <ul class="foot-links" id="footerSocial"></ul>
+  </div>
+  <div class="wrap foot-bottom">
+    <small>© <span id="year"></span> Hội Thánh Tin Lành Việt Nam tại Singapore</small>
+    <small>Kinh Thánh trích theo Bản Truyền Thống 1926</small>
+  </div>
+</footer>
+
+<!-- Sticky player -->
+<div class="player" id="player" hidden>
+  <audio id="audio" preload="metadata"></audio>
+  <div class="wrap player-row">
+    <button id="pPlay" class="p-play" aria-label="Phát hoặc tạm dừng">
+      <svg id="iconPlay" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      <svg id="iconPause" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" hidden><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+    </button>
+    <div class="p-meta">
+      <p class="p-title" id="pTitle"></p>
+      <p class="p-sub" id="pSub"></p>
+    </div>
+    <div class="p-seek">
+      <span id="pCur">0:00</span>
+      <input type="range" id="pSeek" min="0" max="1000" value="0" aria-label="Tua" />
+      <span id="pDur">0:00</span>
+    </div>
+    <div class="p-tools">
+      <button id="pPrev" aria-label="Bài trước"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg></button>
+      <button id="pNext" aria-label="Bài kế"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
+      <button id="pSpeed" aria-label="Tốc độ phát">1×</button>
+      <a id="pDownload" download aria-label="Tải về"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></a>
+      <button id="pClose" aria-label="Đóng trình phát">Đóng</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js" defer></script>
+<script src="js/content.js" defer></script>
+<script src="lib/three/three.global.js" defer></script>
+<script src="js/scene.js" defer></script>
+</body>
+</html>
