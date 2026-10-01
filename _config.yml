@@ -1,0 +1,31 @@
+# Jekyll (có sẵn trên GitHub Pages) chỉ làm một việc: gộp các file nội dung
+# trong _bai_giang/, _hoc_kinh_thanh/, _thong_bao/, _su_kien/ và _data/
+# thành một file /content.json cho website đọc. Không dùng theme, không layout.
+
+title: Hội Thánh Tin Lành Việt Nam tại Singapore
+lang: vi
+timezone: Asia/Singapore
+
+collections:
+  bai_giang:
+    output: false
+  hoc_kinh_thanh:
+    output: false
+  thong_bao:
+    output: false
+  su_kien:
+    output: false
+
+# Không xử lý Markdown/Liquid cho các file tĩnh của site
+exclude:
+  - README.md
+  - tests/
+  - templates/
+  - vec_church_site.zip
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+
+include:
+  - lib
+  - admin

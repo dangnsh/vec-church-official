@@ -1,0 +1,232 @@
+/* ============================================================
+   DỮ LIỆU HỘI THÁNH — Chỉ cần sửa file này để cập nhật website.
+   (Không cần biết lập trình: sửa chữ trong dấu ngoặc kép "...")
+   ============================================================ */
+
+window.VEC_DATA = {
+  // ---------- CẬP NHẬT NỘI DUNG BẰNG GOOGLE SHEETS (khuyên dùng) ----------
+  // Dán link Google Sheet vào "url" (xem hướng dẫn trong README.md, mục "Cập nhật nội dung").
+  // Khi có link, website sẽ tự đọc các tab ThongBao, SuKien, BaiGiang, HocKinhThanh, GioNhom, LienHe
+  // từ Sheet và dùng thay cho dữ liệu bên dưới. Để trống "" nếu chưa dùng Sheet.
+  sheet: {
+    url: "",
+    // Tên các tab trong Sheet (đổi ở đây nếu bạn đặt tên khác)
+    tabs: {
+      announcements: "ThongBao",
+      events: "SuKien",
+      sermons: "BaiGiang",
+      studies: "HocKinhThanh",
+      services: "GioNhom",
+      contact: "LienHe",
+    },
+  },
+
+  // ---------- Thông tin chung ----------
+  church: {
+    name: "Hội Thánh Tin Lành Việt Nam tại Singapore",
+    nameEn: "Vietnamese Evangelical Church (Singapore)",
+    founded: 2009,
+    email: "lienhe@vec.church",            // TODO: thay bằng email thật của Hội Thánh
+    phone: "+65 XXXX XXXX",                // TODO: số điện thoại liên hệ
+    whatsapp: "",                          // ví dụ: "6591234567" (không có dấu +). Để trống nếu chưa có
+    facebook: "https://www.facebook.com/", // TODO: link fanpage
+    youtube: "https://www.youtube.com/",   // TODO: link kênh YouTube
+    zalo: "",                              // link nhóm Zalo (nếu có)
+  },
+
+  // ---------- Địa điểm nhóm lại ----------
+  location: {
+    name: "Queenstown Baptist Church",
+    address: "495 Margaret Drive, Singapore 149305",
+    note: "Gần MRT Queenstown (EW19). Có thang máy và chỗ gửi xe.",
+    mapQuery: "Queenstown Baptist Church, 495 Margaret Drive, Singapore 149305",
+  },
+
+  // ---------- Giờ nhóm ----------
+  // weekday: 0 = Chúa Nhật, 1 = Thứ Hai, ... 6 = Thứ Bảy
+  // time: giờ bắt đầu theo giờ Singapore (24h). Buổi đầu tiên có "primary: true" dùng cho đồng hồ đếm ngược.
+  services: [
+    {
+      title: "Thờ phượng Chúa Nhật",
+      weekday: 0,
+      time: "14:00",
+      durationMin: 120,
+      where: "Queenstown Baptist Church",
+      desc: "Ca ngợi, cầu nguyện và nghe giảng Lời Chúa bằng tiếng Việt. Có chương trình Thiếu nhi song song.",
+      icon: "church",
+      primary: true,
+      tag: "Hằng tuần",
+    },
+    {
+      title: "Học Kinh Thánh & Cầu nguyện",
+      weekday: 3,
+      time: "20:00",
+      durationMin: 90,
+      where: "Trực tuyến (Zoom) & tại nhà tín hữu",
+      desc: "Cùng đào sâu Lời Chúa theo từng sách và cầu thay cho nhau giữa tuần.",
+      icon: "book",
+      tag: "Thứ Tư",
+    },
+    {
+      title: "Thông công Thanh niên – Sinh viên",
+      weekday: 6,
+      time: "18:30",
+      durationMin: 120,
+      where: "Luân phiên tại nhà tín hữu",
+      desc: "Nhóm nhỏ dành cho các bạn trẻ đang học tập và làm việc tại Singapore.",
+      icon: "users",
+      tag: "Thứ Bảy",
+    },
+  ],
+
+  // ---------- Thông báo (mới nhất để trên cùng) ----------
+  announcements: [
+    {
+      title: "Lễ Tạ Ơn & Tiệc Thánh đầu tháng",
+      date: "2026-10-04",
+      pinned: true,
+      body: "Chúa Nhật tuần này Hội Thánh sẽ dự Tiệc Thánh. Xin quý tín hữu dành thời gian dọn lòng và đến sớm 15 phút để cùng cầu nguyện.",
+    },
+    {
+      title: "Ghi danh Trại Thông Công cuối năm",
+      date: "2026-09-28",
+      body: "Trại sẽ diễn ra 12–13/12 tại Pasir Ris. Hạn chót ghi danh 15/11. Liên hệ Ban Thanh niên để biết thêm chi tiết.",
+    },
+    {
+      title: "Chào đón tân sinh viên niên khoá mới",
+      date: "2026-09-14",
+      body: "Hội Thánh tổ chức bữa cơm thông công chào đón các bạn sinh viên mới đến Singapore. Hãy mời bạn bè cùng tham dự!",
+    },
+  ],
+
+  // ---------- Sự kiện sắp tới ----------
+  events: [
+    { date: "2026-10-04", title: "Tiệc Thánh & Lễ Tạ Ơn", where: "Queenstown Baptist Church", time: "14:00" },
+    { date: "2026-10-18", title: "Thông công gia đình – Cơm trưa chung", where: "Sau giờ thờ phượng", time: "16:15" },
+    { date: "2026-11-01", title: "Chúa Nhật Truyền giáo", where: "Queenstown Baptist Church", time: "14:00" },
+    { date: "2026-12-12", title: "Trại Thông Công cuối năm", where: "Pasir Ris", time: "Cả ngày" },
+    { date: "2026-12-20", title: "Thánh Nhạc Giáng Sinh", where: "Queenstown Baptist Church", time: "14:00" },
+  ],
+
+  // ---------- Bài giảng (mới nhất để trên cùng) ----------
+  // audio: đường dẫn file mp3 (ví dụ "audio/2026-09-28.mp3" hoặc link Google Drive/Dropbox trực tiếp)
+  // DEMO: các link SoundHelix bên dưới chỉ để thử trình phát — hãy thay bằng file bài giảng thật.
+  sermons: [
+    {
+      title: "Đức Tin Vượt Qua Giông Bão",
+      speaker: "MS. Nguyễn Văn A",
+      date: "2026-09-28",
+      scripture: "Mác 4:35–41",
+      series: "Theo Dấu Chân Chúa",
+      duration: "42:10",
+      summary: "Khi sóng gió nổi lên trên biển Ga-li-lê, các môn đồ hoảng sợ dù Chúa đang ở cùng họ. Bài giảng nhắc chúng ta rằng sự hiện diện của Chúa là đủ cho mọi cơn bão của đời sống xa quê.",
+      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    },
+    {
+      title: "Sống Như Người Khách Lạ",
+      speaker: "MS. Nguyễn Văn A",
+      date: "2026-09-21",
+      scripture: "I Phi-e-rơ 2:11–12",
+      series: "Theo Dấu Chân Chúa",
+      duration: "38:45",
+      summary: "Là người Việt sống nơi đất khách, chúng ta được kêu gọi sống thánh khiết và làm sáng danh Chúa giữa những người xung quanh.",
+      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+    },
+    {
+      title: "Lòng Biết Ơn Trong Mọi Hoàn Cảnh",
+      speaker: "TĐ. Trần Thị B",
+      date: "2026-09-14",
+      scripture: "I Tê-sa-lô-ni-ca 5:16–18",
+      series: "Đời Sống Tin Kính",
+      duration: "35:20",
+      summary: "Tạ ơn không phải vì mọi sự đều tốt đẹp, mà vì Chúa luôn tốt lành trong mọi sự.",
+      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+    },
+    {
+      title: "Gia Đình Theo Ý Chúa",
+      speaker: "MS. Lê Văn C",
+      date: "2026-09-07",
+      scripture: "Ê-phê-sô 5:22–6:4",
+      series: "Đời Sống Tin Kính",
+      duration: "44:05",
+      summary: "Nguyên tắc Kinh Thánh cho mối quan hệ vợ chồng, cha mẹ và con cái trong một gia đình Cơ Đốc.",
+      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+    },
+    {
+      title: "Người Chăn Hiền Lành",
+      speaker: "MS. Nguyễn Văn A",
+      date: "2026-08-31",
+      scripture: "Thi Thiên 23",
+      series: "Thi Thiên Cho Đời Sống",
+      duration: "40:30",
+      summary: "Thi Thiên 23 không chỉ là lời an ủi lúc tang chế mà là bản tuyên ngôn về sự chăm sóc trọn vẹn của Chúa mỗi ngày.",
+      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+    },
+    {
+      title: "Hãy Yên Lặng Và Biết Rằng Ta Là Đức Chúa Trời",
+      speaker: "TĐ. Trần Thị B",
+      date: "2026-08-24",
+      scripture: "Thi Thiên 46",
+      series: "Thi Thiên Cho Đời Sống",
+      duration: "36:50",
+      summary: "Giữa nhịp sống hối hả của Singapore, Lời Chúa mời gọi chúng ta dừng lại và tin cậy nơi Ngài.",
+      audio: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+    },
+  ],
+
+  // ---------- Học Kinh Thánh (bài học giữa tuần, mới nhất để trên cùng) ----------
+  // notes: link tài liệu (PDF/Google Docs), video: link YouTube/Zoom ghi hình. Để trống nếu không có.
+  studies: [
+    {
+      title: "Bài 6: Sống bởi đức tin",
+      date: "2026-09-30",
+      scripture: "Rô-ma 1:16–17; Ha-ba-cúc 2:4",
+      leader: "MS. Nguyễn Văn A",
+      series: "Thư Rô-ma",
+      notes: "",
+      video: "",
+      summary: "Phao-lô không hổ thẹn về Tin Lành. Chúng ta học về quyền phép của Tin Lành và ý nghĩa của câu “người công bình sẽ sống bởi đức tin”.",
+    },
+    {
+      title: "Bài 5: Lời chào và lòng biết ơn của Phao-lô",
+      date: "2026-09-23",
+      scripture: "Rô-ma 1:1–15",
+      leader: "MS. Nguyễn Văn A",
+      series: "Thư Rô-ma",
+      notes: "",
+      video: "",
+      summary: "Giới thiệu thư Rô-ma: tác giả, người nhận và mục đích. Thái độ biết ơn và khao khát gặp gỡ anh em của Phao-lô.",
+    },
+    {
+      title: "Bài 4: Cầu nguyện theo Bài Cầu Nguyện Chung",
+      date: "2026-09-16",
+      scripture: "Ma-thi-ơ 6:9–13",
+      leader: "TĐ. Trần Thị B",
+      series: "Đời sống cầu nguyện",
+      notes: "",
+      video: "",
+      summary: "Từng lời trong bài cầu nguyện Chúa dạy và cách áp dụng vào giờ tĩnh nguyện mỗi ngày.",
+    },
+  ],
+
+  // ---------- Ban ngành ----------
+  ministries: [
+    { emoji: "🎵", name: "Ban Thờ Phượng", desc: "Hướng dẫn Hội Thánh ca ngợi Chúa mỗi Chúa Nhật. Luôn chào đón người biết hát hoặc chơi nhạc cụ.", lead: "Liên hệ: Ban Chấp Sự" },
+    { emoji: "🧒", name: "Ban Thiếu Nhi", desc: "Dạy Lời Chúa cho các em bằng tiếng Việt song song với giờ thờ phượng người lớn.", lead: "Liên hệ: Ban Chấp Sự" },
+    { emoji: "🎓", name: "Ban Thanh Niên – Sinh Viên", desc: "Thông công, học Kinh Thánh và nâng đỡ các bạn trẻ xa nhà.", lead: "Liên hệ: Ban Chấp Sự" },
+    { emoji: "🙏", name: "Ban Cầu Nguyện", desc: "Cầu thay cho nhu cầu của tín hữu, Hội Thánh và quê hương Việt Nam.", lead: "Liên hệ: Ban Chấp Sự" },
+    { emoji: "🤝", name: "Ban Tiếp Tân & Thăm Viếng", desc: "Chào đón người mới, thăm viếng và giúp đỡ tín hữu khi đau ốm hay gặp khó khăn.", lead: "Liên hệ: Ban Chấp Sự" },
+    { emoji: "📣", name: "Ban Truyền Giáo", desc: "Chia sẻ Tin Lành cho cộng đồng người Việt tại Singapore và hỗ trợ công tác truyền giáo.", lead: "Liên hệ: Ban Chấp Sự" },
+  ],
+
+  // ---------- Câu gốc theo ngày (tự động xoay vòng) ----------
+  verses: [
+    { text: "Hãy đến cùng Ta, hết thảy những kẻ mệt mỏi và gánh nặng, Ta sẽ cho các ngươi được yên nghỉ.", ref: "Ma-thi-ơ 11:28" },
+    { text: "Đức Giê-hô-va là Đấng chăn giữ tôi; tôi sẽ chẳng thiếu thốn gì.", ref: "Thi Thiên 23:1" },
+    { text: "Hãy hết lòng tin cậy Đức Giê-hô-va, chớ nương cậy nơi sự thông sáng của con.", ref: "Châm Ngôn 3:5" },
+    { text: "Tôi làm được mọi sự nhờ Đấng ban thêm sức cho tôi.", ref: "Phi-líp 4:13" },
+    { text: "Vì Đức Chúa Trời yêu thương thế gian, đến nỗi đã ban Con một của Ngài, hầu cho hễ ai tin Con ấy không bị hư mất mà được sự sống đời đời.", ref: "Giăng 3:16" },
+    { text: "Hãy vui mừng mãi mãi, cầu nguyện không thôi, phàm việc gì cũng phải tạ ơn Chúa.", ref: "I Tê-sa-lô-ni-ca 5:16–18" },
+    { text: "Chớ sợ, vì Ta ở với ngươi; chớ kinh khiếp, vì Ta là Đức Chúa Trời ngươi!", ref: "Ê-sai 41:10" },
+  ],
+};

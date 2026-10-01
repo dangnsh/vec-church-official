@@ -1,483 +1,269 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VEC Church Solutions — AI & Cloud Technologies for Modern Churches</title>
-    <meta name="description"
-        content="Empowering Christian churches and ministries with cutting-edge AI Live Translation and Multi-tenant Church Management Software (ChMS).">
-    
-    <!-- Open Graph / Meta -->
-    <meta property="og:title" content="VEC Church Solutions — AI & Cloud Technologies for Modern Churches">
-    <meta property="og:description" content="Next-generation SaaS platform for Church Management and Real-time AI Audio Translation.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vec.church">
-    
-    <!-- Fonts & Tailwind CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hội Thánh Tin Lành Việt Nam tại Singapore</title>
+  <meta name="description" content="Hội Thánh Tin Lành Việt Nam tại Singapore — giờ nhóm, sinh hoạt trong tuần và bài giảng Chúa Nhật dành cho tín hữu người Việt tại Singapore." />
+  <meta property="og:title" content="Hội Thánh Tin Lành Việt Nam tại Singapore" />
+  <meta property="og:description" content="Giờ nhóm, sinh hoạt trong tuần và bài giảng Chúa Nhật." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vec.church" />
+  <meta name="theme-color" content="#0F2D5C" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#f0f7ff',
-                            100: '#e0effe',
-                            500: '#2563eb',
-                            600: '#1d4ed8',
-                            700: '#1e40af',
-                            900: '#0f172a',
-                            950: '#030712',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .glass-card {
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .glass-card-hover {
-            transition: all 0.3s ease;
-        }
-        .glass-card-hover:hover {
-            border-color: rgba(59, 130, 246, 0.4);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.2);
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, #60a5fa 0%, #a855f7 50%, #ec4899 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .gradient-bg {
-            background: radial-gradient(circle at 50% -20%, #1e1b4b 0%, #0f172a 60%, #030712 100%);
-        }
-    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;0,7..72,600;1,7..72,400&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
 </head>
+<body>
 
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-blue-600 selection:text-white gradient-bg min-h-screen flex flex-col">
+<header class="masthead" id="masthead">
+  <div class="wrap masthead-row">
+    <a class="wordmark" href="#top">
+      <svg class="mark" viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><rect x="14" y="3" width="4" height="26" rx="1"/><rect x="6" y="10" width="20" height="4" rx="1"/></svg>
+      <span>Hội Thánh Tin Lành Việt Nam <em>tại Singapore</em></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Mục chính">
+      <a href="#gio-nhom">Giờ nhóm</a>
+      <a href="#tuan-nay">Tuần này</a>
+      <a href="#bai-giang">Bài giảng</a>
+      <a href="#hoc-kinh-thanh">Học Kinh Thánh</a>
+      <a href="#ban-nganh">Ban ngành</a>
+      <a href="#ve-hoi-thanh">Về Hội Thánh</a>
+      <a href="#lien-he">Liên hệ</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-controls="menu" aria-expanded="false">Mục lục</button>
+  </div>
+</header>
 
-    <!-- Header / Navigation -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform">
-                    V
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-xl font-bold tracking-tight text-white flex items-center gap-1.5">
-                        vec.church <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20">STARTUP</span>
-                    </span>
-                    <span class="text-xs text-slate-400 hidden sm:inline">VEC Church Software Solutions</span>
-                </div>
-            </a>
+<main id="top">
 
-            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
-                <a href="#products" class="hover:text-blue-400 transition-colors">Products</a>
-                <a href="#features" class="hover:text-blue-400 transition-colors">Features</a>
-                <a href="#deployments" class="hover:text-blue-400 transition-colors">Deployments</a>
-                <a href="#team" class="hover:text-blue-400 transition-colors">Leadership & Team</a>
-                <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
-            </nav>
-
-            <div class="flex items-center gap-4">
-                <a href="https://app.vec.church" target="_blank" rel="noopener noreferrer"
-                    class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-medium text-sm shadow-lg shadow-blue-600/25 transition-all hover:scale-105">
-                    <i data-lucide="play-circle" class="w-4 h-4"></i>
-                    <span>Try Worship Translator</span>
-                </a>
-            </div>
+  <!-- Hero: the one bold moment on the page -->
+  <section class="hero" id="hero">
+    <canvas id="scene" aria-hidden="true"></canvas>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="hero-when" id="heroWhen">Chúa Nhật này</p>
+        <h1 class="hero-title">
+          <span>Mời bạn đến</span>
+          <span>thờ phượng Chúa</span>
+          <span>cùng gia đình</span>
+          <span>người Việt tại Singapore.</span>
+        </h1>
+        <p class="hero-lead">Chúng tôi nhóm lại mỗi Chúa Nhật để ca ngợi Chúa, nghe Lời Ngài bằng tiếng Việt và nâng đỡ nhau trong đời sống xa quê. Dù bạn mới đến Singapore hay đã ở lâu, chỗ ngồi luôn sẵn dành cho bạn.</p>
+        <div class="hero-actions">
+          <a class="button" href="#gio-nhom">Xem giờ nhóm và đường đi</a>
+          <a class="link-arrow" href="#bai-giang" id="heroSermonLink">Nghe bài giảng tuần trước</a>
         </div>
-    </header>
+      </div>
+    </div>
+  </section>
 
-    <main class="flex-grow">
-        <!-- Hero Section -->
-        <section class="relative pt-16 pb-20 md:pt-24 md:pb-32 overflow-hidden border-b border-slate-800/60">
-            <!-- Background Glow -->
-            <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-blue-600/15 blur-[120px] pointer-events-none rounded-full"></div>
-            <div class="absolute top-1/3 left-1/3 w-[400px] h-[300px] bg-purple-600/10 blur-[100px] pointer-events-none rounded-full"></div>
+  <!-- Verse of the day -->
+  <section class="verse-row">
+    <div class="wrap verse">
+      <p id="verseText">“Hãy đến cùng Ta, hết thảy những kẻ mệt mỏi và gánh nặng, Ta sẽ cho các ngươi được yên nghỉ.”</p>
+      <p class="verse-ref" id="verseRef">Ma-thi-ơ 11:28</p>
+    </div>
+  </section>
 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-700/80 text-slate-300 text-xs font-semibold mb-8 shadow-inner">
-                    <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                    Live SaaS Solutions for Christian Ministries
-                </div>
+  <!-- Service times -->
+  <section class="block" id="gio-nhom">
+    <div class="wrap">
+      <header class="block-head">
+        <h2>Giờ nhóm</h2>
+        <p>Các buổi nhóm cố định trong tuần. Giờ theo múi giờ Singapore.</p>
+      </header>
 
-                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.15] max-w-5xl mx-auto">
-                    Bridging Faith & Technology with <span class="gradient-text">AI & Cloud Solutions</span>
-                </h1>
+      <div class="two-col">
+        <ol class="timetable" id="timetable"><!-- from data.js --></ol>
 
-                <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-normal">
-                    <strong class="text-white font-semibold">VEC Church Software</strong> empowers local churches and international congregations with real-time AI sermon translation and multi-tenant Church Management Platforms.
-                </p>
+        <aside class="place">
+          <h3 id="locName">Queenstown Baptist Church</h3>
+          <p class="place-addr" id="locAddr">495 Margaret Drive, Singapore 149305</p>
+          <p class="place-note" id="locNote"></p>
+          <div class="place-map"><iframe id="locMapFrame" title="Bản đồ đến nơi nhóm" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src=""></iframe></div>
+          <p class="place-actions">
+            <a class="button button-small" id="locMapLink" target="_blank" rel="noopener" href="#">Mở chỉ đường</a>
+            <a class="link-arrow" id="locCalLink" href="#" download="tho-phuong-chua-nhat.ics">Thêm vào lịch của bạn</a>
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
 
-                <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="https://app.vec.church" target="_blank" rel="noopener noreferrer"
-                        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-base shadow-xl shadow-blue-600/30 transition-all hover:scale-[1.02]">
-                        <i data-lucide="globe" class="w-5 h-5"></i>
-                        <span>Launch Live App</span>
-                    </a>
-                    <a href="#products"
-                        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-semibold text-base transition-all">
-                        <i data-lucide="layers" class="w-5 h-5 text-blue-400"></i>
-                        <span>Explore Platform</span>
-                    </a>
-                </div>
-
-                <!-- Metrics / Social Proof -->
-                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-8 border-t border-slate-800/80">
-                    <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800">
-                        <div class="text-2xl sm:text-3xl font-extrabold text-white">12+</div>
-                        <div class="text-xs text-slate-400 font-medium mt-1">Supported Languages</div>
-                    </div>
-                    <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800">
-                        <div class="text-2xl sm:text-3xl font-extrabold text-white">&lt; 1s</div>
-                        <div class="text-xs text-slate-400 font-medium mt-1">Real-time Audio Latency</div>
-                    </div>
-                    <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800">
-                        <div class="text-2xl sm:text-3xl font-extrabold text-white">Multi-tenant</div>
-                        <div class="text-xs text-slate-400 font-medium mt-1">SaaS Architecture</div>
-                    </div>
-                    <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800">
-                        <div class="text-2xl sm:text-3xl font-extrabold text-white">VIE2010 & NIV</div>
-                        <div class="text-xs text-slate-400 font-medium mt-1">Bible Version Context</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Products Section -->
-        <section id="products" class="py-20 md:py-28 relative border-b border-slate-800/60">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">Core Offerings</h2>
-                    <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Our Flagship Software Platforms</p>
-                    <p class="mt-4 text-slate-400 text-base">Fully functional, production-ready applications engineered for church administration and worship services.</p>
-                </div>
-
-                <div class="grid lg:grid-cols-2 gap-8">
-                    <!-- Product 1: Worship Translator -->
-                    <div class="glass-card rounded-2xl p-8 flex flex-col justify-between glass-card-hover relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
-                        <div>
-                            <div class="flex items-center justify-between mb-6">
-                                <div class="w-12 h-12 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-blue-400">
-                                    <i data-lucide="mic" class="w-6 h-6"></i>
-                                </div>
-                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 flex items-center gap-1.5">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Live Production
-                                </span>
-                            </div>
-
-                            <h3 class="text-2xl font-bold text-white">Worship Translator</h3>
-                            <p class="text-sm font-medium text-blue-400 mt-1">AI-Powered Real-time Audio & Text Translation</p>
-                            
-                            <p class="mt-4 text-slate-300 text-sm leading-relaxed">
-                                A live AI translation tool designed specifically for worship services. Translates sermons into 12+ languages simultaneously via high-quality Speech-to-Text and AI Text-to-Speech narration, integrating biblical terminology from standard Bible translations (VIE2010, NIV, etc.).
-                            </p>
-
-                            <!-- Live App Screenshot Preview / Link -->
-                            <div class="mt-6 rounded-xl border border-slate-700/80 overflow-hidden bg-slate-900/90 p-1 group">
-                                <div class="relative aspect-video rounded-lg overflow-hidden bg-slate-950 flex items-center justify-center">
-                                    <img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/height:400/https://cdn.gamma.app/ottgqkaxb4znm38/b2dc3dfd77bc4b01b6c1d69b8308a903/original/Screenshot-2026-07-25-at-3.42.19-PM.png" 
-                                         alt="Worship Translator Interface" 
-                                         class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                         onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop'">
-                                    <div class="absolute inset-0 bg-slate-950/40 flex items-center justify-center">
-                                        <a href="https://app.vec.church" target="_blank" class="px-4 py-2 rounded-lg bg-blue-600/90 text-white font-semibold text-xs flex items-center gap-2 hover:bg-blue-500 shadow-lg">
-                                            <i data-lucide="external-link" class="w-4 h-4"></i> Open Live App
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <ul class="mt-6 space-y-2.5 text-xs text-slate-300">
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check-circle2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
-                                    <span><strong>Multi-lingual Support:</strong> Vietnamese, English, Korean, Chinese, Thai, Bahasa, French, German, and more.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check-circle2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
-                                    <span><strong>QR Code Listener Access:</strong> Congregation members scan QR code to listen or read live on mobile web browsers.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check-circle2" class="w-4 h-4 text-blue-400 shrink-0 mt-0.5"></i>
-                                    <span><strong>Biblical Context Engine:</strong> Context-aware prompts tailored for sermon vocabulary and scripture citations.</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="mt-8 pt-6 border-t border-slate-800 flex items-center justify-between">
-                            <span class="text-xs text-slate-400 font-mono">App URL: app.vec.church</span>
-                            <a href="https://app.vec.church" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-400 hover:text-blue-300 flex items-center gap-1">
-                                Launch Application <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Product 2: VEC Church Management (ChMS) -->
-                    <div class="glass-card rounded-2xl p-8 flex flex-col justify-between glass-card-hover relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl pointer-events-none"></div>
-                        <div>
-                            <div class="flex items-center justify-between mb-6">
-                                <div class="w-12 h-12 rounded-xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
-                                    <i data-lucide="database" class="w-6 h-6"></i>
-                                </div>
-                                <span class="px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20 flex items-center gap-1.5">
-                                    <span class="w-1.5 h-1.5 rounded-full bg-blue-400"></span> Enterprise Platform
-                                </span>
-                            </div>
-
-                            <h3 class="text-2xl font-bold text-white">VEC Church Management System (ChMS)</h3>
-                            <p class="text-sm font-medium text-indigo-400 mt-1">Multi-tenant Cloud Platform for Church Operations</p>
-                            
-                            <p class="mt-4 text-slate-300 text-sm leading-relaxed">
-                                An enterprise-grade Church Management Platform built with Django REST Framework, Angular/React, and Cloud SQL. Supports multi-tenant church branches, believer databases, Sunday school attendance, pastoral care visits, financial reports, and election voting.
-                            </p>
-
-                            <!-- ChMS Screenshot Preview -->
-                            <div class="mt-6 rounded-xl border border-slate-700/80 overflow-hidden bg-slate-900/90 p-1 group">
-                                <div class="relative aspect-video rounded-lg overflow-hidden bg-slate-950 flex items-center justify-center">
-                                    <img src="assets/images/chms-dashboard.jpg" 
-                                         alt="Church Management System Dashboard" 
-                                         class="w-full h-full object-cover">
-                                </div>
-                            </div>
-
-                            <ul class="mt-6 space-y-2.5 text-xs text-slate-300">
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check-circle2" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
-                                    <span><strong>Believer & Family Directory:</strong> Comprehensive member profiling, household trees, area/cell group assignments.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check-circle2" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
-                                    <span><strong>Sunday School & Classes:</strong> Automated attendance tracking, trainer management, lesson logs.</span>
-                                </li>
-                                <li class="flex items-start gap-2">
-                                    <i data-lucide="check-circle2" class="w-4 h-4 text-indigo-400 shrink-0 mt-0.5"></i>
-                                    <span><strong>Pastoral Visitation & Elections:</strong> Schedule pastoral care visits and execute transparent church board elections.</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="mt-8 pt-6 border-t border-slate-800 flex items-center justify-between">
-                            <span class="text-xs text-slate-400 font-mono">Module: ChMS Core Platform</span>
-                            <span class="text-xs font-semibold text-slate-400 flex items-center gap-1">
-                                SaaS Cloud Ready <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features / Capabilities Grid -->
-        <section id="features" class="py-20 md:py-28 relative border-b border-slate-800/60 bg-slate-950/50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">Architectural Capabilities</h2>
-                    <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Engineered for Reliability & Scale</p>
-                    <p class="mt-4 text-slate-400 text-base">Key technical modules designed to solve operational challenges for Christian organizations.</p>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-                        <div class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-4">
-                            <i data-lucide="cpu" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white">AI Audio Processing</h3>
-                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                            Low-latency Neural Speech-to-Text and TTS engines optimized for noisy sanctuary acoustic environments.
-                        </p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-                        <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-4">
-                            <i data-lucide="shield-check" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white">Multi-Tenant Isolation</h3>
-                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                            Secure tenant separation ensuring member privacy and data isolation across different church branches.
-                        </p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-4">
-                            <i data-lucide="book-open" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white">Bilingual Worship Output</h3>
-                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                            Automated program formatting matching church standards (VIE2010, NIV, TVCHH hymn database integration).
-                        </p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-                        <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4">
-                            <i data-lucide="users" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white">Sunday School & Care</h3>
-                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                            Class lesson tracking, attendance logging, and automated notification alerts for pastoral follow-ups.
-                        </p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-                        <div class="w-10 h-10 rounded-lg bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-4">
-                            <i data-lucide="vote" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white">Digital Church Elections</h3>
-                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                            Secure board voting module supporting candidate configurations, ballot tallying, and official exports.
-                        </p>
-                    </div>
-
-                    <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800">
-                        <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-4">
-                            <i data-lucide="qr-code" class="w-5 h-5"></i>
-                        </div>
-                        <h3 class="text-lg font-bold text-white">Zero-Install Mobile UX</h3>
-                        <p class="text-xs text-slate-400 mt-2 leading-relaxed">
-                            Congregation members access live audio feeds and bulletins instantly via web browsers without app downloads.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Active Deployments / Church Partners -->
-        <section id="deployments" class="py-16 md:py-20 relative border-b border-slate-800/60">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-2xl mx-auto mb-10">
-                    <h2 class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-2">Real-World Impact</h2>
-                    <p class="text-2xl font-bold text-white">Trusted by International & Local Congregations</p>
-                </div>
-
-                <div class="flex flex-wrap items-center justify-center gap-6 max-w-4xl mx-auto">
-                    <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-3">
-                        <i data-lucide="church" class="w-5 h-5 text-blue-400"></i>
-                        <div>
-                            <div class="text-sm font-bold text-white">HTTLVN Singapore</div>
-                            <div class="text-xs text-slate-400">Live Worship Translator & Service Management</div>
-                        </div>
-                    </div>
-                    <div class="px-6 py-4 rounded-xl bg-slate-900/80 border border-slate-800 flex items-center gap-3">
-                        <i data-lucide="church" class="w-5 h-5 text-indigo-400"></i>
-                        <div>
-                            <div class="text-sm font-bold text-white">HTTLVN Chi Hội Sài Gòn</div>
-                            <div class="text-xs text-slate-400">Church Management Platform & Member Operations</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Operational Transparency / Leadership & Team Section -->
-        <section id="team" class="py-20 md:py-28 relative border-b border-slate-800/60">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3">Operational Transparency</h2>
-                    <p class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Founders & Leadership Team</p>
-                    <p class="mt-4 text-slate-400 text-base">Verified leadership behind VEC Church Software with direct links to professional credentials.</p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                    <!-- Founder Card -->
-                    <div class="glass-card rounded-2xl p-8 border border-slate-800 flex flex-col sm:flex-row items-center sm:items-start gap-6">
-                        <div class="relative shrink-0">
-                            <img src="assets/images/nam-nguyen.jpg" alt="Nam Nguyen" class="w-24 h-24 rounded-2xl object-cover border-2 border-blue-500/40 shadow-lg shadow-blue-500/20">
-                        </div>
-                        <div class="text-center sm:text-left">
-                            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-blue-500/10 text-blue-400 border border-blue-500/20">Founder & CEO</span>
-                            <h3 class="text-xl font-bold text-white mt-2">Nam Nguyen</h3>
-                            <p class="text-xs text-slate-400 mt-1">Founder, VEC Church Software</p>
-                            <p class="text-xs text-slate-300 mt-3 leading-relaxed">
-                                Leading vision, strategy, and partnerships for church digital transformation across Southeast Asia.
-                            </p>
-                            <div class="mt-4 flex items-center justify-center sm:justify-start gap-3">
-                                <a href="https://www.linkedin.com/in/nam-nguyen-son" target="_blank" rel="noopener noreferrer" 
-                                   class="inline-flex items-center gap-1.5 text-xs font-medium text-blue-400 hover:text-blue-300 bg-blue-500/10 px-3 py-1.5 rounded-lg border border-blue-500/20 transition-colors">
-                                    <i data-lucide="linkedin" class="w-3.5 h-3.5"></i> LinkedIn Profile
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Advisor / Lead Tech Card -->
-                    <div class="glass-card rounded-2xl p-8 border border-slate-800 flex flex-col sm:flex-row items-center sm:items-start gap-6">
-                        <div class="relative shrink-0">
-                            <img src="assets/images/dang-nguyen.jpg" alt="Dang Nguyen (Hai Dang)" class="w-24 h-24 rounded-2xl object-cover border-2 border-indigo-500/40 shadow-lg shadow-indigo-500/20">
-                        </div>
-                        <div class="text-center sm:text-left">
-                            <span class="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">Technical Advisor & Lead Architect</span>
-                            <h3 class="text-xl font-bold text-white mt-2">Dang Nguyen (Hai Dang)</h3>
-                            <p class="text-xs text-slate-400 mt-1">Lead Software Architect & AI Researcher</p>
-                            <p class="text-xs text-slate-300 mt-3 leading-relaxed">
-                                Architecting real-time AI speech translation models, multi-tenant cloud infrastructure, and software pipelines.
-                            </p>
-                            <div class="mt-4 flex items-center justify-center sm:justify-start gap-3">
-                                <a href="https://www.linkedin.com/in/dangnsh912" target="_blank" rel="noopener noreferrer" 
-                                   class="inline-flex items-center gap-1.5 text-xs font-medium text-indigo-400 hover:text-indigo-300 bg-indigo-500/10 px-3 py-1.5 rounded-lg border border-indigo-500/20 transition-colors">
-                                    <i data-lucide="linkedin" class="w-3.5 h-3.5"></i> LinkedIn Profile
-                                </a>
-                                <a href="https://github.com/dangnsh" target="_blank" rel="noopener noreferrer" 
-                                   class="inline-flex items-center gap-1.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-800 px-3 py-1.5 rounded-lg border border-slate-700 transition-colors">
-                                    <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About & Compliance Footer Info -->
-        <section id="about" class="py-16 border-b border-slate-800/60 bg-slate-950/80">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-                <h3 class="text-xl font-bold text-white">About VEC Church Software</h3>
-                <p class="mt-3 text-sm text-slate-400 leading-relaxed">
-                    VEC Church Software (`vec.church`) is an independent software venture focused on building technology for Christian churches. We create open, modern, and accessible AI & cloud tools to support church administration, multilingual worship, and community care.
-                </p>
-                <div class="mt-6 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
-                    <span class="flex items-center gap-1.5"><i data-lucide="mail" class="w-4 h-4 text-blue-400"></i> Official Contact: <a href="mailto:dangnsh@vec.church" class="text-slate-200 hover:underline">dangnsh@vec.church</a></span>
-                    <span class="flex items-center gap-1.5"><i data-lucide="globe" class="w-4 h-4 text-blue-400"></i> Domain: <strong class="text-slate-200">vec.church</strong></span>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-slate-950 py-10 border-t border-slate-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-            <div>
-                © 2026 VEC Church Software (vec.church). All rights reserved.
-            </div>
-            <div class="flex items-center gap-6">
-                <a href="#products" class="hover:text-slate-300 transition-colors">Products</a>
-                <a href="#team" class="hover:text-slate-300 transition-colors">Team</a>
-                <a href="mailto:dangnsh@vec.church" class="hover:text-slate-300 transition-colors">Contact</a>
-            </div>
+  <!-- This week -->
+  <section class="block block-tint" id="tuan-nay">
+    <div class="wrap">
+      <header class="block-head">
+        <h2>Tuần này</h2>
+        <p>Thông báo từ Ban Chấp Sự và những ngày sắp tới cần ghi nhớ.</p>
+      </header>
+      <div class="two-col two-col-wide">
+        <div>
+          <h3 class="sub">Thông báo</h3>
+          <ul class="bulletin" id="announceList"></ul>
         </div>
-    </footer>
+        <div>
+          <h3 class="sub">Sắp tới</h3>
+          <ul class="agenda" id="eventList"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Initialize Lucide Icons -->
-    <script>
-        lucide.createIcons();
-    </script>
+  <!-- Sermons -->
+  <section class="block" id="bai-giang">
+    <div class="wrap">
+      <header class="block-head">
+        <h2>Bài giảng</h2>
+        <p>Nghe lại sứ điệp Chúa Nhật trên trang này hoặc tải về nghe khi đi làm, đi học.</p>
+      </header>
+
+      <article class="latest" id="latest"><!-- from data.js --></article>
+
+      <div class="archive-head">
+        <h3 class="sub">Các bài trước</h3>
+        <div class="archive-tools">
+          <label class="field"><span class="sr-only">Tìm bài giảng</span><input type="search" id="sermonSearch" placeholder="Tìm tựa đề, diễn giả, đoạn Kinh Thánh" /></label>
+          <label class="field"><span class="sr-only">Loạt bài</span><select id="seriesSelect"><option value="">Tất cả loạt bài</option></select></label>
+        </div>
+      </div>
+      <ol class="archive" id="sermonList"></ol>
+      <p class="empty" id="sermonEmpty" hidden>Không có bài nào khớp. Thử từ khoá khác hoặc chọn “Tất cả loạt bài”.</p>
+    </div>
+  </section>
+
+  <!-- Bible study -->
+  <section class="block block-tint" id="hoc-kinh-thanh">
+    <div class="wrap">
+      <header class="block-head">
+        <h2>Học Kinh Thánh</h2>
+        <p>Bài học giữa tuần để đọc trước ở nhà, xem lại nếu vắng mặt, hoặc dùng cho nhóm nhỏ.</p>
+      </header>
+      <ol class="studies" id="studyList"></ol>
+      <p class="empty" id="studyEmpty" hidden>Chưa có bài học nào được đăng.</p>
+    </div>
+  </section>
+
+  <!-- Ministries -->
+  <section class="block" id="ban-nganh">
+    <div class="wrap">
+      <header class="block-head">
+        <h2>Ban ngành</h2>
+        <p>Nơi mỗi người góp phần phục vụ. Nếu muốn tham gia, hãy nói với bất kỳ ai trong Ban Chấp Sự sau giờ nhóm.</p>
+      </header>
+      <dl class="ministries" id="ministryList"></dl>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="block block-tint" id="ve-hoi-thanh">
+    <div class="wrap about">
+      <header class="block-head">
+        <h2>Về Hội Thánh</h2>
+      </header>
+      <div class="prose">
+        <p>Hội Thánh Tin Lành Việt Nam tại Singapore bắt đầu nhóm lại từ năm <span id="foundedYear">2009</span>, khi một nhóm nhỏ tín hữu người Việt đang học tập và làm việc tại đây tìm đến nhau để cùng thờ phượng bằng tiếng mẹ đẻ. Đến nay Hội Thánh là mái nhà chung của sinh viên, người lao động, các gia đình trẻ và những người Việt định cư lâu năm ở Singapore.</p>
+        <p>Chúng tôi tin Kinh Thánh là Lời Đức Chúa Trời, tin Chúa Giê-xu Christ là Cứu Chúa duy nhất, và sống để làm vinh hiển danh Ngài qua bốn việc giản dị: thờ phượng, thông công, học Lời Chúa và chia sẻ Tin Lành cho đồng hương.</p>
+        <p>Hội Thánh nhóm tại cơ sở của Queenstown Baptist Church và sinh hoạt trong mối thông công với các Hội Thánh Tin Lành Việt Nam hải ngoại.</p>
+      </div>
+      <figure class="about-figure">
+        <blockquote>“Vì nơi nào có hai ba người nhân danh Ta nhóm nhau lại, thì Ta ở giữa họ.”</blockquote>
+        <figcaption>Ma-thi-ơ 18:20</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="block" id="lien-he">
+    <div class="wrap">
+      <header class="block-head">
+        <h2>Liên hệ</h2>
+        <p>Cần cầu thay, muốn được thăm viếng, hay chỉ muốn hỏi đường đến nhà thờ — cứ nhắn cho chúng tôi.</p>
+      </header>
+      <div class="two-col">
+        <dl class="contact" id="contactList"></dl>
+        <form class="form" id="contactForm" novalidate>
+          <div class="form-row">
+            <label class="field"><span>Họ tên</span><input name="name" required autocomplete="name" /></label>
+            <label class="field"><span>Email hoặc số điện thoại</span><input name="contact" required autocomplete="email" /></label>
+          </div>
+          <label class="field"><span>Bạn cần gì?</span>
+            <select name="topic">
+              <option>Xin cầu thay</option>
+              <option>Muốn đến nhóm lần đầu</option>
+              <option>Tìm hiểu về Chúa</option>
+              <option>Cần thăm viếng hoặc giúp đỡ</option>
+              <option>Việc khác</option>
+            </select>
+          </label>
+          <label class="field"><span>Lời nhắn</span><textarea name="message" rows="5"></textarea></label>
+          <div class="form-foot">
+            <button class="button" type="submit">Gửi lời nhắn</button>
+            <small>Ứng dụng email của bạn sẽ mở ra với nội dung đã điền sẵn.</small>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <p class="foot-name">Hội Thánh Tin Lành Việt Nam tại Singapore</p>
+      <p class="foot-sub">Vietnamese Evangelical Church (Singapore), nhóm lại từ <span id="foundedYear2">2009</span></p>
+      <p class="foot-sub" id="footerAddr"></p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="#gio-nhom">Giờ nhóm</a></li>
+      <li><a href="#tuan-nay">Tuần này</a></li>
+      <li><a href="#bai-giang">Bài giảng</a></li>
+      <li><a href="#lien-he">Liên hệ</a></li>
+    </ul>
+    <ul class="foot-links" id="footerSocial"></ul>
+  </div>
+  <div class="wrap foot-bottom">
+    <small>© <span id="year"></span> Hội Thánh Tin Lành Việt Nam tại Singapore</small>
+    <small>Kinh Thánh trích theo Bản Truyền Thống 1926</small>
+  </div>
+</footer>
+
+<!-- Sticky player -->
+<div class="player" id="player" hidden>
+  <audio id="audio" preload="metadata"></audio>
+  <div class="wrap player-row">
+    <button id="pPlay" class="p-play" aria-label="Phát hoặc tạm dừng">
+      <svg id="iconPlay" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      <svg id="iconPause" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" hidden><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+    </button>
+    <div class="p-meta">
+      <p class="p-title" id="pTitle"></p>
+      <p class="p-sub" id="pSub"></p>
+    </div>
+    <div class="p-seek">
+      <span id="pCur">0:00</span>
+      <input type="range" id="pSeek" min="0" max="1000" value="0" aria-label="Tua" />
+      <span id="pDur">0:00</span>
+    </div>
+    <div class="p-tools">
+      <button id="pPrev" aria-label="Bài trước"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg></button>
+      <button id="pNext" aria-label="Bài kế"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M16 6h2v12h-2zM6 18l8.5-6L6 6z"/></svg></button>
+      <button id="pSpeed" aria-label="Tốc độ phát">1×</button>
+      <a id="pDownload" download aria-label="Tải về"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></a>
+      <button id="pClose" aria-label="Đóng trình phát">Đóng</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js" defer></script>
+<script src="js/content.js" defer></script>
+<script src="lib/three/three.global.js" defer></script>
+<script src="js/scene.js" defer></script>
 </body>
-
 </html>

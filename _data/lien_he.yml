@@ -1,0 +1,16 @@
+# Thông tin Hội Thánh & liên hệ
+church:
+  name: "Hội Thánh Tin Lành Việt Nam tại Singapore"
+  nameEn: "Vietnamese Evangelical Church (Singapore)"
+  founded: 2009
+  email: "lienhe@vec.church"
+  phone: "+65 XXXX XXXX"
+  whatsapp: ""
+  zalo: ""
+  facebook: "https://www.facebook.com/"
+  youtube: "https://www.youtube.com/"
+location:
+  name: "Queenstown Baptist Church"
+  address: "495 Margaret Drive, Singapore 149305"
+  note: "Gần MRT Queenstown (EW19). Có thang máy và chỗ gửi xe."
+  mapQuery: "Queenstown Baptist Church, 495 Margaret Drive, Singapore 149305"

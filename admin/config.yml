@@ -1,0 +1,188 @@
+# ============================================================
+# Cấu hình Decap CMS — trang quản trị tại https://vec.church/admin/
+#
+# CẦN SỬA 2 DÒNG bên dưới (xem README, mục "Trang quản trị /admin"):
+#   repo:   tên-tài-khoản-github/tên-repo   (ví dụ: vecsingapore/vec.church)
+#   branch: nhánh mà GitHub Pages đang deploy (thường là main)
+# ============================================================
+backend:
+  name: github
+  repo: dangnsh/vec-church-official
+  branch: main
+  base_url: https://api.netlify.com     # Netlify chỉ đóng vai trò cổng đăng nhập GitHub (miễn phí)
+  commit_messages:
+    create: "Thêm {{collection}}: {{slug}}"
+    update: "Sửa {{collection}}: {{slug}}"
+    delete: "Xoá {{collection}}: {{slug}}"
+    uploadMedia: "Tải lên {{path}}"
+    deleteMedia: "Xoá {{path}}"
+
+# Chạy thử tại máy: `npx decap-server` trong thư mục site, rồi mở http://localhost:8080/admin/
+local_backend: true
+
+site_url: https://vec.church
+display_url: https://vec.church
+logo_url: https://vec.church/assets/favicon.svg
+# (Giao diện khung của Decap bằng tiếng Anh; mọi nhãn/mục bên trong đã là tiếng Việt.)
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+
+collections:
+  # ---------------------------------------------------------- Bài giảng
+  - name: "bai_giang"
+    label: "Bài giảng"
+    label_singular: "bài giảng"
+    description: "Mỗi bài giảng một mục. File mp3 nên để trên Google Drive / YouTube rồi dán link."
+    folder: "_bai_giang"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: ["date", "title", "speaker"]
+    summary: "{{date}} — {{title}} ({{speaker}})"
+    fields:
+      - { label: "Tựa đề", name: "title", widget: "string" }
+      - { label: "Ngày giảng", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: false }
+      - { label: "Diễn giả", name: "speaker", widget: "string", hint: "Ví dụ: MS. Nguyễn Văn A" }
+      - { label: "Đoạn Kinh Thánh", name: "scripture", widget: "string", hint: "Ví dụ: Mác 4:35–41" }
+      - { label: "Loạt bài", name: "series", widget: "string", required: false }
+      - { label: "Thời lượng", name: "duration", widget: "string", required: false, hint: "Ví dụ: 42:10" }
+      - { label: "Tóm tắt (2–3 câu)", name: "summary", widget: "text", required: false }
+      - { label: "Link audio (mp3)", name: "audio", widget: "string", required: false, hint: "Dán link chia sẻ Google Drive của file mp3, hoặc link mp3 trực tiếp." }
+      - { label: "Link video (YouTube)", name: "video", widget: "string", required: false }
+
+  # ---------------------------------------------------------- Học Kinh Thánh
+  - name: "hoc_kinh_thanh"
+    label: "Học Kinh Thánh"
+    label_singular: "bài học"
+    folder: "_hoc_kinh_thanh"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: ["date", "title"]
+    summary: "{{date}} — {{title}}"
+    fields:
+      - { label: "Tựa đề", name: "title", widget: "string" }
+      - { label: "Ngày học", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: false }
+      - { label: "Đoạn Kinh Thánh", name: "scripture", widget: "string" }
+      - { label: "Người hướng dẫn", name: "leader", widget: "string", required: false }
+      - { label: "Loạt bài / Sách", name: "series", widget: "string", required: false }
+      - { label: "Tóm tắt", name: "summary", widget: "text", required: false }
+      - { label: "Tài liệu (PDF / Google Docs)", name: "notes", widget: "string", required: false, hint: "Có thể dán link Google Drive hoặc tải PDF lên bằng nút bên dưới." }
+      - { label: "Tải PDF lên (tuỳ chọn)", name: "notes_file", widget: "file", required: false }
+      - { label: "Link video (YouTube / Zoom)", name: "video", widget: "string", required: false }
+
+  # ---------------------------------------------------------- Thông báo
+  - name: "thong_bao"
+    label: "Thông báo"
+    label_singular: "thông báo"
+    folder: "_thong_bao"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: ["date", "title"]
+    summary: "{{date}} — {{title}}"
+    fields:
+      - { label: "Tiêu đề", name: "title", widget: "string" }
+      - { label: "Ngày đăng", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: false }
+      - { label: "Cần lưu ý (ghim lên đầu)", name: "pinned", widget: "boolean", default: false }
+      - { label: "Nội dung", name: "body", widget: "text" }
+
+  # ---------------------------------------------------------- Sự kiện
+  - name: "su_kien"
+    label: "Sự kiện sắp tới"
+    label_singular: "sự kiện"
+    description: "Sự kiện đã qua tự ẩn khỏi trang chủ, không cần xoá."
+    folder: "_su_kien"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    sortable_fields: ["date", "title"]
+    summary: "{{date}} — {{title}}"
+    fields:
+      - { label: "Tên sự kiện", name: "title", widget: "string" }
+      - { label: "Ngày", name: "date", widget: "datetime", date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: false }
+      - { label: "Giờ", name: "time", widget: "string", required: false, hint: "Ví dụ: 14:00 hoặc Cả ngày" }
+      - { label: "Nơi", name: "where", widget: "string", required: false }
+
+  # ---------------------------------------------------------- Cài đặt chung
+  - name: "cai_dat"
+    label: "Cài đặt chung"
+    files:
+      - name: "gio_nhom"
+        label: "Giờ nhóm"
+        file: "_data/gio_nhom.yml"
+        fields:
+          - label: "Các buổi nhóm"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.time}}"
+            fields:
+              - { label: "Tên buổi nhóm", name: "title", widget: "string" }
+              - label: "Thứ"
+                name: "weekday"
+                widget: "select"
+                options:
+                  - { label: "Chúa Nhật", value: 0 }
+                  - { label: "Thứ Hai", value: 1 }
+                  - { label: "Thứ Ba", value: 2 }
+                  - { label: "Thứ Tư", value: 3 }
+                  - { label: "Thứ Năm", value: 4 }
+                  - { label: "Thứ Sáu", value: 5 }
+                  - { label: "Thứ Bảy", value: 6 }
+              - { label: "Giờ bắt đầu", name: "time", widget: "string", hint: "Giờ Singapore, dạng 14:00" }
+              - { label: "Thời lượng (phút)", name: "durationMin", widget: "number", value_type: "int", default: 120 }
+              - { label: "Nơi", name: "where", widget: "string" }
+              - { label: "Mô tả", name: "desc", widget: "text", required: false }
+              - { label: "Buổi chính (dùng cho dòng 'Chúa Nhật này…' và nút Thêm vào lịch)", name: "primary", widget: "boolean", default: false }
+
+      - name: "lien_he"
+        label: "Thông tin Hội Thánh & liên hệ"
+        file: "_data/lien_he.yml"
+        fields:
+          - label: "Hội Thánh"
+            name: "church"
+            widget: "object"
+            fields:
+              - { label: "Tên", name: "name", widget: "string" }
+              - { label: "Tên tiếng Anh", name: "nameEn", widget: "string" }
+              - { label: "Năm bắt đầu nhóm", name: "founded", widget: "number", value_type: "int" }
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Điện thoại", name: "phone", widget: "string", required: false }
+              - { label: "WhatsApp (số, không dấu +)", name: "whatsapp", widget: "string", required: false }
+              - { label: "Link nhóm Zalo", name: "zalo", widget: "string", required: false }
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "YouTube", name: "youtube", widget: "string", required: false }
+          - label: "Nơi nhóm"
+            name: "location"
+            widget: "object"
+            fields:
+              - { label: "Tên nơi nhóm", name: "name", widget: "string" }
+              - { label: "Địa chỉ", name: "address", widget: "string" }
+              - { label: "Ghi chú đường đi", name: "note", widget: "string", required: false }
+              - { label: "Từ khoá tìm trên Google Maps", name: "mapQuery", widget: "string", required: false }
+
+      - name: "ban_nganh"
+        label: "Ban ngành"
+        file: "_data/ban_nganh.yml"
+        fields:
+          - label: "Danh sách ban ngành"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Tên ban", name: "name", widget: "string" }
+              - { label: "Mô tả", name: "desc", widget: "text" }
+              - { label: "Liên hệ", name: "lead", widget: "string", required: false }
+
+      - name: "cau_goc"
+        label: "Câu gốc (xoay vòng theo ngày)"
+        file: "_data/cau_goc.yml"
+        fields:
+          - label: "Các câu Kinh Thánh"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.ref}}"
+            fields:
+              - { label: "Câu Kinh Thánh", name: "text", widget: "text" }
+              - { label: "Địa chỉ", name: "ref", widget: "string", hint: "Ví dụ: Thi Thiên 23:1" }

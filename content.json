@@ -1,0 +1,65 @@
+---
+layout: null
+permalink: /content.json
+---
+{%- comment -%}
+  Được Jekyll (GitHub Pages) tạo tự động từ các file nội dung. Website đọc file này.
+  Khi chạy thử bằng python http.server thì file này không được dựng → web tự dùng js/data.js.
+{%- endcomment -%}
+{
+  "generated": {{ site.time | date_to_xmlschema | jsonify }},
+  "church": {{ site.data.lien_he.church | jsonify }},
+  "location": {{ site.data.lien_he.location | jsonify }},
+  "services": {{ site.data.gio_nhom.items | jsonify }},
+  "ministries": {{ site.data.ban_nganh.items | jsonify }},
+  "verses": {{ site.data.cau_goc.items | jsonify }},
+  "announcements": [
+    {%- for a in site.thong_bao -%}
+    {
+      "title": {{ a.title | jsonify }},
+      "date": {{ a.date | date: "%Y-%m-%d" | jsonify }},
+      "pinned": {{ a.pinned | default: false | jsonify }},
+      "body": {{ a.body | default: a.content | strip | jsonify }}
+    }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ],
+  "events": [
+    {%- for e in site.su_kien -%}
+    {
+      "title": {{ e.title | jsonify }},
+      "date": {{ e.date | date: "%Y-%m-%d" | jsonify }},
+      "time": {{ e.time | jsonify }},
+      "where": {{ e.where | jsonify }}
+    }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ],
+  "sermons": [
+    {%- for s in site.bai_giang -%}
+    {
+      "title": {{ s.title | jsonify }},
+      "date": {{ s.date | date: "%Y-%m-%d" | jsonify }},
+      "speaker": {{ s.speaker | jsonify }},
+      "scripture": {{ s.scripture | jsonify }},
+      "series": {{ s.series | jsonify }},
+      "duration": {{ s.duration | jsonify }},
+      "summary": {{ s.summary | default: s.content | strip | jsonify }},
+      "audio": {{ s.audio | jsonify }},
+      "video": {{ s.video | jsonify }}
+    }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ],
+  "studies": [
+    {%- for s in site.hoc_kinh_thanh -%}
+    {
+      "title": {{ s.title | jsonify }},
+      "date": {{ s.date | date: "%Y-%m-%d" | jsonify }},
+      "scripture": {{ s.scripture | jsonify }},
+      "leader": {{ s.leader | jsonify }},
+      "series": {{ s.series | jsonify }},
+      "summary": {{ s.summary | default: s.content | strip | jsonify }},
+      "notes": {{ s.notes | default: s.notes_file | jsonify }},
+      "video": {{ s.video | jsonify }}
+    }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  ]
+}
