@@ -1,10 +1,12 @@
 # ============================================================
 # Cấu hình Decap CMS — trang quản trị tại https://vec.church/admin/
 #
-# Đăng nhập: KHÔNG dùng Netlify (đã bị khai tử). Cổng OAuth tự chạy
-# trên máy nhà (vec-admin-proxy): vào /admin → Login → nhập mật khẩu
-# quản trị → tự động cấp quyền GitHub. Muốn đổi mật khẩu: chạy trên máy
-# Spark: `python3 -c "..."` theo hướng dẫn trong ~/vec-admin-proxy/.
+# Đăng nhập: "Login with GitHub" → xác thực qua cổng OAuth nhà mình
+# (spark1-dsh..., Tailscale Funnel — KHÔNG dùng Netlify, đã bị khai tử).
+# Chỉ tài khoản GitHub trong danh sách cho phép (gh_users trên máy Spark,
+# file ~/vec-admin-proxy/config.json) mới vào được. Thêm người quản trị:
+# thêm login GitHub của họ vào mảng gh_users rồi `systemctl --user restart
+# vec-admin-proxy` trên Spark.
 # ============================================================
 backend:
   name: github
