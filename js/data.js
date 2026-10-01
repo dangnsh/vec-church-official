@@ -26,7 +26,7 @@ window.VEC_DATA = {
     name: "Hội Thánh Tin Lành Việt Nam tại Singapore",
     nameEn: "Vietnamese Evangelical Church (Singapore)",
     founded: 2009,
-    email: "lienhe@vec.church",            // TODO: thay bằng email thật của Hội Thánh
+    email: "info@vec.church",              // email chính thức của Hội Thánh
     phone: "+65 9068 3275",                // số liên hệ Hội Thánh
     whatsapp: "6590683275",                // số, không dấu + — web hiện nút nhắn WhatsApp
     facebook: "",                          // không dùng Facebook

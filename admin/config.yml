@@ -1,15 +1,17 @@
 # ============================================================
 # Cấu hình Decap CMS — trang quản trị tại https://vec.church/admin/
 #
-# CẦN SỬA 2 DÒNG bên dưới (xem README, mục "Trang quản trị /admin"):
-#   repo:   tên-tài-khoản-github/tên-repo   (ví dụ: vecsingapore/vec.church)
-#   branch: nhánh mà GitHub Pages đang deploy (thường là main)
+# Đăng nhập: KHÔNG dùng Netlify (đã bị khai tử). Cổng OAuth tự chạy
+# trên máy nhà (vec-admin-proxy): vào /admin → Login → nhập mật khẩu
+# quản trị → tự động cấp quyền GitHub. Muốn đổi mật khẩu: chạy trên máy
+# Spark: `python3 -c "..."` theo hướng dẫn trong ~/vec-admin-proxy/.
 # ============================================================
 backend:
   name: github
   repo: dangnsh/vec-church-official
   branch: main
-  base_url: https://api.netlify.com     # Netlify chỉ đóng vai trò cổng đăng nhập GitHub (miễn phí)
+  base_url: https://spark1-dsh.tail9a5989.ts.net   # cổng OAuth nhà mình (Tailscale Funnel)
+  auth_endpoint: /auth                              # /auth → trang mật khẩu → cấp token
   commit_messages:
     create: "Thêm {{collection}}: {{slug}}"
     update: "Sửa {{collection}}: {{slug}}"
