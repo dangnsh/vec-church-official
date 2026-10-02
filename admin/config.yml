@@ -1,18 +1,20 @@
 # ============================================================
 # Cấu hình Decap CMS — trang quản trị tại https://vec.church/admin/
 #
-# Đăng nhập: "Login with GitHub" → xác thực qua cổng OAuth nhà mình
-# (spark1-dsh..., Tailscale Funnel — KHÔNG dùng Netlify, đã bị khai tử).
-# Chỉ tài khoản GitHub trong danh sách cho phép (gh_users trên máy Spark,
-# file ~/vec-admin-proxy/config.json) mới vào được. Thêm người quản trị:
-# thêm login GitHub của họ vào mảng gh_users rồi `systemctl --user restart
-# vec-admin-proxy` trên Spark.
+# Đăng nhập (khuyến nghị): "Login with GitHub" → popup mở trang
+# ĐĂNG NHẬP BẰNG EMAIL của cổng nhà mình (spark1-dsh... — KHÔNG dùng
+# Netlify, đã bị khai tử). Nhận sự dùng email + mật khẩu được cấp
+# (info@vec.church, hoặc email riêng từng người). Danh sách ở máy Spark:
+# ~/vec-admin-proxy/config.json → mảng users. Thêm người:
+#   python3 ~/vec-admin-proxy/vec-users.py add <email>
+# rồi `systemctl --user restart vec-admin-proxy`.
+# Nút "hoặc đăng nhập bằng GitHub" vẫn còn cho admin GitHub (gh_users).
 # ============================================================
 backend:
   name: github
   repo: dangnsh/vec-church-official
   branch: main
-  base_url: https://spark1-dsh.tail9a5989.ts.net   # cổng OAuth nhà mình (Tailscale Funnel)
+  base_url: https://spark1-dsh.tail9a5989.ts.net
   auth_endpoint: /auth                              # /auth → trang mật khẩu → cấp token
   commit_messages:
     create: "Thêm {{collection}}: {{slug}}"
